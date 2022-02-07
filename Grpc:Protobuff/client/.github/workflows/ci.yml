@@ -1,0 +1,23 @@
+name: CI
+on:
+  pull_request:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - java: 8
+    steps:
+    - uses: actions/checkout@v2.4.0
+      with:
+        submodules: true
+    - uses: actions/setup-java@v2
+      with:
+        java-version: 8
+        distribution: temurin
+    - uses: coursier/cache-action@v6
+    - run: sbt -v "+ test"
