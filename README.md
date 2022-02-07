@@ -1,6 +1,6 @@
 # protobuf
 
-_Instrucntions to run the server:_
+_Instructions to run the server:_
 
 1. ```sh
    $ go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.26
@@ -16,5 +16,9 @@ _Instrucntions to run the server:_
 4. ```sh
    go run greeter_server/main.go
    ```   
-  
 
+_Instructions to run the Client:_
+
+```sh
+grpcScalaSample/run
+   ```
